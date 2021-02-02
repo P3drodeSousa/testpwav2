@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  /* COLORS  */
+  --golden: #f5c800;
+  --blade-golden: #f2e3b6;
+  --dark-yellow: #af6a0b;
+  --text: #cde5f5;
+  --dark-blue: #184a73;
+  --dark-blue-hover: #0a3c64;
+  --blue: #366894;
+  --blue-hover: #225480;
+  --light-blue: #5485af;
+  --light-blue-hover: #40719b;
+  --white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.darkBlue {
+  background: #184a73;
+}
+
+.blue {
+  background: #366894;
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: flex;
+}
+
+header {
+  background: var(--dark-blue);
+  color: var(--text);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--light-blue);
+  z-index: 999;
+  transition: 200ms;
+}
+
+header .right {
+  margin-right: auto;
+}
+
+header span {
+  color: var(--text);
+  margin-right: 10px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  flex-direction: column;
+  position: relative;
+}
+
+h1 {
+  color: var(--golden);
+  font-size: clamp(25px, 4vw, 80px);
+  font-weight: 900;
+  line-height: clamp(18px, 4vw, 100px);
+  margin-bottom: 20px;
+}
+
+.main_wrapper {
+  max-width: 650px;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+.main_wrapper span {
+  color: var(--text);
+  font-size: clamp(18px, 4vw, 40px);
+}
+
+.main_wrapper form {
+  margin-top: 60px;
+}
+
+.main_wrapper input {
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 15px;
+  max-width: 450px;
+  color: var(--text);
+  background: var(--blue-hover);
+  font-size: clamp(20px, 4vw, 30px);
+  padding: 7px 10px;
+  font-weight: 900;
+}
+
+/* Temp Link*/
+
+.temp_link {
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  width: 120px;
+  background: var(--light-blue);
+}
+
+/* Button*/
+button {
+  width: 100%;
+  max-width: 450px;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: clamp(20px, 4vw, 30px);
+}
+
+/* Blade yellow*/
+.blade {
+  background: var(--blade-golden);
+  color: var(--dark-blue);
+}
+
+.blade:hover {
+  color: var(--golden);
+}
+
+.blade:active {
+  background: var(--white);
+}
+
+.blue {
+  font-size: 18px;
+  margin-top: 40px;
+  background: var(--light-blue);
+  color: var(--text);
+}
+
+.blue:hover {
+  font-size: 18px;
+  margin-top: 40px;
+  background: var(--text);
+  color: var(--dark-blue);
+}
+
+.return {
+  width: 250px;
+}
+
+#footer {
+  align-self: flex-end;
+  height: 100px;
+  display: flex;
+  bottom: 95px;
+  align-items: center;
+  width: 100%;
+  /* background: var(--dark-blue); */
+  color: var(--text);
+  font-size: clamp(16px, 4vw, 25px);
+}
+
+#footer .propos {
+  background: var(--light-blue);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#footer .propos:hover {
+  background: var(--blade-golden);
+  color: var(--dark-blue);
+}
+
+#footer .impressum {
+  margin-left: auto;
+  color: var(--light-blue);
+}
+
+#footer .impressum:hover {
+  color: var(--text);
+  cursor: pointer;
+}

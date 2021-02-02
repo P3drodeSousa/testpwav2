@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meca</title>
+    <link rel="preload" href="./css/style.css" as="style" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./js/lib/dragula.min.css" />
+  </head>
+  <body>
+    <div class="questions">
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="active"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="timer" data-time="300">05:00</div>
+    <div class="question">
+      <span>
+        Ranger les sept nombres suivants par ordre croissant (du plus petit au
+        plus grand)
+      </span>
+
+      <div class="answers">
+        <div class="draggable">0.8</div>
+        <div class="draggable">0.09</div>
+        <div class="draggable">0.4</div>
+        <div class="draggable">0.651</div>
+        <div class="draggable">0.62</div>
+        <div class="draggable">0.35</div>
+        <div class="draggable">0.852</div>
+      </div>
+      <button class="blue" id="exercice3">Suivant</button>
+    </div>
+    <script src="./js/exercice/timer.js"></script>
+    <script src="./js/lib/dragula.min.js"></script>
+    <script src="./js/exercice/drag.js"></script>
+    <script>
+      document
+        .querySelector("#exercice3")
+        .addEventListener("click", () => (window.location = "results.html"));
+    </script>
+  </body>
+</html>

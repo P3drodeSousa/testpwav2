@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meca</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="questions">
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="completed"></div>
+      <div class="active"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="timer" data-time="300">05:00</div>
+    <div class="question">
+      <span>
+        Ranger les sept nombres suivants par ordre croissant (du plus petit au
+        plus grand)
+      </span>
+      <div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">1</div></div>
+          <div class="draggable">0.8</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">2</div></div>
+          <div class="draggable">0.09</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">3</div></div>
+          <div class="draggable">0.4</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">4</div></div>
+          <div class="draggable">0.651</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">5</div></div>
+          <div class="draggable">0.62</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">6</div></div>
+          <div class="draggable">0.35</div>
+        </div>
+        <div class="answer">
+          <div class="dropabble"><div class="outer">7</div></div>
+          <div class="draggable">0.852</div>
+        </div>
+      </div>
+      <button class="blue" id="exercice2">Suivant</button>
+    </div>
+    <script src="./js/exercice/timer.js"></script>
+    <script>
+      document
+        .querySelector("#exercice2")
+        .addEventListener("click", () => (window.location = "exercicev2.html"));
+    </script>
+  </body>
+</html>
