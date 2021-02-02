@@ -89,7 +89,7 @@ function loadContent() {
     catEl.classList.add("opening");
     catEl.innerHTML = `
 
-        <img src="./img/icons/download.svg" class="download" alt="" />
+        <img src="./img/icons/download.svg" alt="" />
           <a href="../img/sample.pdf" download>
         <div class="supp">
           <span>Support de cours <b>PDF</b> 2Mo</span>

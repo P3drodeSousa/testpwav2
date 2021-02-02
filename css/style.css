@@ -257,6 +257,14 @@ footer .impressum:hover {
   height: 25px;
   margin-right: 15px;
 }
+
+.download {
+  fill: #5485af;
+}
+.download:hover {
+  fill: var(--golden);
+}
+
 .category:hover,
 .category:hover .title {
   background: var(--dark-blue-hover);
