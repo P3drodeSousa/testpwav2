@@ -9,7 +9,5 @@ function toggleDisplay() {
   }
 }
 
-document
-  .querySelector("footer .propos")
-  .addEventListener("click", toggleDisplay);
+document.querySelector(".propos").addEventListener("click", toggleDisplay);
 close.addEventListener("click", toggleDisplay);

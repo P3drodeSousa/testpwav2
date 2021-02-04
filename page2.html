@@ -5,21 +5,566 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meca</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="manifest" href="./manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWAGram" />
+    <link
+      rel="apple-touch-icon"
+      href="./img/icons/logo/app-icon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./img/icons/logo/app-icon-512x512.png"
+      sizes="512x512"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="/img/icons/app-icon-144x144.png"
+    />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="theme-color" content="#3f51b5" /> -->
   </head>
-  <body>
-    <header>
+  <body data-barba="wrapper">
+    <header class="menus_Header">
       <img src="./img/logos/meca.svg" alt="meca logo" class="right" />
-      <span>Déconnexion</span>
-      <img src="./img/logos/user.svg" alt="meca logo" />
+      <a href="https://www.emploilausanne.ch/" target="_blank">
+        <img src="./img/logos/el.svg" alt="emploi lausanne" />
+      </a>
     </header>
-    <main class="category_Container"></main>
-    <footer>
-      <span class="impressum">Impressum</span>
-    </footer>
-    <script src="./js/lib/header.js"></script>
+    <!-- A propos -->
+
+    <main
+      data-barba="container"
+      data-barba-namespace="home"
+      class="darkBlue"
+      style="
+        /* background-image: linear-gradient(to right, #184a73, #366894); */
+        min-height: 100vh;
+        min-width: 100vw;
+      "
+    >
+      <div class="main_wrapper">
+        <div class="category_Container">
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+              id="download"
+            >
+              <path
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title" value="Transcription">
+              <div class="infos">
+                <h2>Transcription</h2>
+                <span
+                  >Nombre, lettre, argent, séparateur de millier, virgule</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title" value="Calcul professionnel">
+              <div class="infos">
+                <h2>Calcul professionnel</h2>
+                <span>Bâtiment, restauration</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les 4 opérations</h2>
+                <span>+, -, x, /</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Clavier</h2>
+                <span>SHIFT, Alt Gr, raccourci</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Calcul mental</h2>
+                <span
+                  >Les tables 2 à 12, arrondis, argent, complément à 10 et
+                  100</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Géométrie</h2>
+                <span>Thales, Pythagore, densité, angle...</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les pourcentages</h2>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les surfaces</h2>
+                <span>Triangle, quadrilatère, cercle</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les fractions</h2>
+                <span
+                  >Notion de fraction, fraction usuels, 4 opérations,
+                  problèmes</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les volumes</h2>
+                <span>Prisme, cylindre, cône, pyramide, sphère</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Les unités</h2>
+                <span>l, m, g, m2, m3</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Puissance, racine</h2>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Temps, vitesse</h2>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Graphique</h2>
+                <span>Circulaire, barre, courbe, aire, colonne</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>La proportionnalité</h2>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Interfaces informatisées</h2>
+                <span>Pointer, cliquer et glisser sous forme de mission</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Tests psychotechniques</h2>
+                <span>Logique, mémoire, spatialisation...</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="category">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="23.976"
+              viewBox="0 0 20 23.976"
+            >
+              <path
+                id="download"
+                data-name="Tracé 475"
+                d="M287.638,429.933v3h20v-3Zm10-2.927h0l9.384-9.387L304.9,415.5l-5.764,5.765V408.957h-3v12.306l-5.765-5.765-2.121,2.121Z"
+                transform="translate(-287.638 -408.957)"
+              />
+            </svg>
+
+            <div class="supp">
+              <a href="../img/sample.pdf" download>
+                Support de cours <b>PDF</b> 2Mo</a
+              >
+            </div>
+            <a href="page3.html" class="title">
+              <div class="infos">
+                <h2>Instruments professionnels</h2>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div id="footer" class="wrapper">
+          <span class="impressum">Impressum</span>
+        </div>
+        <!-- <a href="page2.html" class="temp_link">Main Page</a> -->
+      </div>
+    </main>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@barba/css"></script>
+    <script src="./js/transitions/app.js"></script>
     <script src="./js/page2/app.js"></script>
-    <script>
-      document.querySelector("body").style.background = "#184a73";
-    </script>
   </body>
 </html>

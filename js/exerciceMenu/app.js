@@ -16,7 +16,7 @@
 
 //   e.target.classList.toggle("selected");
 // });
-const header = sessionStorage.getItem("Thematique");
+const header = sessionStorage.getItem("Exercice");
 
 document.querySelector(".exerciceMenu_Header h2").innerText = header;
 
