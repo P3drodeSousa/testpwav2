@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Header</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="links">
+        <a class="first" href="">1</a>
+        <a class="second" href="">2</a>
+      </div>
+      <div class="wrapper">
+        <div class="outer_1">1</div>
+        <div class="outer_2">2</div>
+      </div>
+    </div>
+    <script>
+      const first = document.querySelector(".first");
+      const second = document.querySelector(".second");
+
+      first.addEventListener("mouseover", mouseEnter);
+      first.addEventListener("mouseout", mouseOut);
+
+      second.addEventListener("mouseover", mouseEnter2);
+      second.addEventListener("mouseout", mouseOut2);
+
+      function mouseEnter(event) {
+        first.style.background = "red";
+        document.querySelector(".outer_1").style.background = "red";
+      }
+
+      function mouseOut() {
+        first.style.background = "yellow";
+        document.querySelector(".outer_1").style.background = "blue";
+      }
+
+      function mouseEnter2(event) {
+        second.style.background = "red";
+        document.querySelector(".outer_2").style.background = "red";
+      }
+
+      function mouseOut2() {
+        second.style.background = "yellow";
+        document.querySelector(".outer_2").style.background = "blue";
+      }
+    </script>
+  </body>
+</html>
