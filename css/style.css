@@ -6,12 +6,14 @@
   --blade-golden: #f2e3b6;
   --dark-yellow: #af6a0b;
   --text: #cde5f5;
+  --exercice-Menu: #72a3cd;
   --dark-blue: #184a73;
   --dark-blue-hover: #0a3c64;
   --blue: #366894;
   --blue-hover: #225480;
   --light-blue: #5485af;
   --light-blue-hover: #40719b;
+  --button-Exercice: #407198;
   --white: #fff;
 }
 
@@ -55,6 +57,10 @@ a {
 
 .blue {
   background: var(--blue);
+}
+
+.Menu_bckC {
+  background: var(--exercice-Menu);
 }
 
 .wrapper {
@@ -274,6 +280,20 @@ button {
 .blueBtn:hover {
   background: var(--text);
   color: var(--dark-blue);
+}
+
+.exerciceBtn {
+  font-size: 20px;
+  margin-top: 40px;
+  background: var(--button-Exercice);
+  color: var(--text);
+  align-self: center;
+}
+
+.exerciceBtn:hover {
+  background: var(--text);
+  color: var(--dark-blue);
+  transition: 400ms;
 }
 
 .return {
@@ -681,7 +701,7 @@ a:hover svg {
 
 .menu_Exercice {
   margin-top: -95px;
-  color: var(--dark-blue);
+  color: var(--text);
   max-width: 320px;
   width: 100%;
   padding: 20px 20px;
@@ -733,7 +753,7 @@ a:hover svg {
 }
 
 .close {
-  color: var(--dark-blue);
+  color: var(--text);
   width: 100%;
   margin-top: 30px;
   margin-left: auto;
@@ -742,7 +762,7 @@ a:hover svg {
 }
 
 .close a:visited {
-  color: var(--dark-blue);
+  color: var(--text);
 }
 
 .close a:hover {
@@ -775,15 +795,18 @@ a:hover svg {
   margin: 2px;
   flex: 1;
   min-width: 45px;
-  height: 15px;
+  height: 30px;
+  background: var(--dark-blue);
   background: var(--light-blue);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  transition: height 500ms ease;
 }
 
 .questions .completed {
   background: var(--dark-blue);
+  z-index: 888;
 }
 .questions .completed2 {
   background: var(--golden);
@@ -791,7 +814,7 @@ a:hover svg {
 
 .questions .result {
   height: 40px;
-  animation: wait 1s ease-in-out 0.6s forwards;
+  transition: background 600ms linear;
 }
 
 .questions .striped {
@@ -799,11 +822,12 @@ a:hover svg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  animation: wait 0.6s linear forwards;
 }
 
 @keyframes wait {
   from {
-    opacity: 0.1;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -834,6 +858,13 @@ a:hover svg {
   background: white;
 }
 
+#title {
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+}
+
 #timer {
   margin: 15px auto;
   color: var(--dark-blue);
@@ -844,10 +875,6 @@ a:hover svg {
 .question {
   margin: 0 auto;
   width: 95%;
-  color: var(--dark-blue);
-  font-weight: bold;
-  font-size: 17px;
-  text-align: center;
   display: flex;
   flex-direction: column;
 }
@@ -895,6 +922,9 @@ a:hover svg {
   height: 70px;
   flex: 1;
   color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;

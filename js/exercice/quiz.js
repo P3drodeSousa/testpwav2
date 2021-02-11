@@ -190,6 +190,8 @@ const data = [
 const question = document.querySelector(".questions");
 const answers = document.querySelector(".answers");
 const oui = document.querySelector(".question");
+const title = document.querySelector("#title");
+const timer = document.getElementById("timer");
 const next = document.querySelector("#next").addEventListener("click", verify);
 
 const total = localStorage.getItem("number");
@@ -198,35 +200,61 @@ const arrLvl = data
   .slice(0, total);
 let active = 0;
 let trys = 0;
+let current = question.children;
+
+const random = () => Math.floor(Math.random() * Math.floor(arrLvl.length));
 
 function tryNumber() {
   if (trys === 3) {
-    window.location = "/";
+    removeClick();
+    displayResult();
   }
+}
+
+function removeClick() {
+  document.querySelectorAll(".indicator").forEach((el, i) => {
+    el.style.pointerEvents = "none";
+  });
 }
 
 function displayResult() {
   trys += 1;
   tryNumber();
+
+  timer.style.color = "white";
+  title.innerText = "";
+
   document.querySelectorAll(".indicator").forEach((el) => {
     el.classList.add("result");
   });
 
-  arrLvl.map((item, i) => {
-    !item.test
-      ? question.children[i].classList.add("striped")
-      : question.children[i].classList.contains("striped")
-      ? question.children[i].classList.add("completed2")
-      : question.children[i].classList.add("completed");
-  });
+  setTimeout(() => {
+    arrLvl.map((item, i) => {
+      !item.test
+        ? current[i].classList.add("striped")
+        : current[i].classList.contains("striped")
+        ? current[i].classList.add("completed2")
+        : current[i].classList.add("completed");
+    });
+  }, 1000);
 
-  const random = () => Math.floor(Math.random() * Math.floor(arrLvl.length));
+  const essais = 3 - trys;
 
   return (answers.innerHTML = `
        <div class="results_Content">
+       <h2>${
+         trys !== 4
+           ? `Essayez de nouveau.
+Vous avez encore ${essais} ${essais === 1 ? "essai" : "essais"}.`
+           : " Vous n'avez plus essai."
+       }</h2>
         <span class="total">${random() * 10}%</span>
         <span class="total_sur">${random()} sur ${arrLvl.length}</span>
-        <button class="blueBtn return" id="exercice">Retour</button>
+        ${
+          trys === 4 || random() * 10 > 60
+            ? '<button class="blueBtn return" id="exercice">Retour</button>'
+            : ""
+        }
       </div>   
     `);
   /* true results*/
@@ -255,12 +283,13 @@ function verify() {
   arrLvl[active].test = correct;
 
   completed();
+
   active += 1;
   answers.innerHTML = "";
 
   if (active === arrLvl.length) {
-    question.children[active - 1].classList.remove("active");
-    question.children[active - 1].classList.remove("activeTry");
+    current[active - 1].classList.remove("active");
+    current[active - 1].classList.remove("activeTry");
     return displayResult();
   }
 
@@ -269,26 +298,28 @@ function verify() {
 }
 
 function completed() {
-  const test = question.children[active].classList.contains("striped")
-    ? (question.children[active].classList.add("completed2"),
-      question.children[active].classList.remove("striped"))
-    : question.children[active].classList.add("completed");
+  const test = current[active].classList.contains("striped")
+    ? (current[active].classList.add("completed2"),
+      current[active].classList.remove("striped"))
+    : current[active].classList.add("completed");
 
   return test;
 }
 
 function renderActive(activ) {
   active = activ;
+
   renderAnwers(active);
+
   document.querySelectorAll(".indicator").forEach((el) => {
     el.classList.remove("active");
     el.classList.remove("result");
     el.classList.remove("activeTry");
   });
 
-  const test = question.children[active].classList.contains("striped")
-    ? question.children[active].classList.add("activeTry")
-    : question.children[active].classList.add("active");
+  const test = current[active].classList.contains("striped")
+    ? current[active].classList.add("activeTry")
+    : current[active].classList.add("active");
 
   return test;
 }
@@ -296,9 +327,8 @@ function renderActive(activ) {
 function renderAnwers(active) {
   answers.innerHTML = "";
   const shuffle = [...arrLvl[active].correct].sort(() => Math.random() - 0.5);
-  const title = document.createElement("span");
+
   title.innerText = arrLvl[active].question;
-  answers.append(title);
 
   shuffle.map((item, i) => {
     const el = document.createElement("div");
@@ -324,5 +354,5 @@ function renderIndicators() {
 window.onload = () => {
   renderIndicators();
   renderAnwers(active);
-  question.children[active].classList.add("active");
+  current[active].classList.add("active");
 };

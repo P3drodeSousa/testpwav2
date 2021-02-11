@@ -4,8 +4,6 @@ let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 
-startTimer();
-
 function onTimesUp() {
   clearInterval(timerInterval);
 }
@@ -38,3 +36,5 @@ function formatTime(time) {
 
   return `${minutes}:${seconds}`;
 }
+
+window.onload = startTimer();
