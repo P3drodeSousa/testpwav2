@@ -192,7 +192,8 @@ const answers = document.querySelector(".answers");
 const oui = document.querySelector(".question");
 const title = document.querySelector("#title");
 const timer = document.getElementById("timer");
-const next = document.querySelector("#next").addEventListener("click", verify);
+const next = document.querySelector("#next");
+const modal = document.querySelector(".modal");
 
 const total = localStorage.getItem("number");
 const arrLvl = data
@@ -203,6 +204,9 @@ let trys = 0;
 let current = question.children;
 
 const random = () => Math.floor(Math.random() * Math.floor(arrLvl.length));
+const essais = () => 3 - trys;
+
+next.addEventListener("click", verify);
 
 function tryNumber() {
   if (trys === 3) {
@@ -221,7 +225,7 @@ function displayResult() {
   trys += 1;
   tryNumber();
 
-  timer.style.color = "white";
+  timer.style.display = "none";
   title.innerText = "";
 
   document.querySelectorAll(".indicator").forEach((el) => {
@@ -238,25 +242,24 @@ function displayResult() {
     });
   }, 1000);
 
-  const essais = 3 - trys;
-
   return (answers.innerHTML = `
        <div class="results_Content">
        <h2>${
          trys !== 4
            ? `Essayez de nouveau.
-Vous avez encore ${essais} ${essais === 1 ? "essai" : "essais"}.`
-           : " Vous n'avez plus essai."
+Vous avez encore ${essais()} ${essais() === 1 ? "essai" : "essais"}.`
+           : " Vous n'avez plus essai ;("
        }</h2>
         <span class="total">${random() * 10}%</span>
         <span class="total_sur">${random()} sur ${arrLvl.length}</span>
-        ${
-          trys === 4 || random() * 10 > 60
-            ? '<button class="blueBtn return" id="exercice">Retour</button>'
-            : ""
-        }
+        <button class="blueBtn return" onclick="returnToExerciceMenu()" id="exercice">Retour</button>
+       
       </div>   
     `);
+
+  // No trys or 100% only
+  // ${trys === 4 || random() * 10 > 60 ? "" : ""}
+
   /* true results*/
   // <div class="results_Content">
   //   <span class="total">
@@ -271,6 +274,34 @@ Vous avez encore ${essais} ${essais === 1 ? "essai" : "essais"}.`
   // </div>;
 }
 
+function displayModal() {
+  modal.style.display = "block";
+  modal.innerHTML = `<h2>Vous avez encore ${essais()} ${
+    essais() === 1 ? "essai" : "essais"
+  }. Êtes vous sur de vouloir quitter cette page ?</h2>
+    <div class="confirmer">
+    <span class="confimer" onclick="confirmer()">Confimer</span>
+    <span class="annuler" onclick="annuler()">Annuler</span>
+    </div>
+    `;
+}
+
+function annuler() {
+  modal.style.display = "none";
+}
+
+function confirmer() {
+  window.location = "/exercice.html";
+}
+
+function returnToExerciceMenu() {
+  if (trys !== 4) {
+    return displayModal();
+  }
+
+  window.location = "/exercice.html";
+}
+
 function verify() {
   const result = document.querySelectorAll(".draggable");
   let test = [];
@@ -280,6 +311,7 @@ function verify() {
 
   const correct =
     JSON.stringify(test) === JSON.stringify(arrLvl[active].correct);
+
   arrLvl[active].test = correct;
 
   completed();
@@ -290,6 +322,7 @@ function verify() {
   if (active === arrLvl.length) {
     current[active - 1].classList.remove("active");
     current[active - 1].classList.remove("activeTry");
+    next.style.opacity = "0";
     return displayResult();
   }
 
@@ -326,6 +359,7 @@ function renderActive(activ) {
 
 function renderAnwers(active) {
   answers.innerHTML = "";
+  next.style.opacity = "1";
   const shuffle = [...arrLvl[active].correct].sort(() => Math.random() - 0.5);
 
   title.innerText = arrLvl[active].question;
@@ -354,5 +388,6 @@ function renderIndicators() {
 window.onload = () => {
   renderIndicators();
   renderAnwers(active);
+  title.innerText = arrLvl[active].question;
   current[active].classList.add("active");
 };

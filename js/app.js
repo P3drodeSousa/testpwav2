@@ -30,23 +30,25 @@ function handleClick(e) {
 export const theme = () => {
   document.querySelector(
     ".theme"
-  ).innerHTML = `<a href="page2.html"><div class="wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
+  ).innerHTML = `<div class="wrapper"><a href="page2.html"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
   <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
-</svg> <span>${localStorage.getItem("theme")}</span></div>
-</a>`;
+</svg> <span>${localStorage.getItem("theme")}</span>
+</a>
+</div>`;
 };
 
 export const theme2 = () => {
   document.querySelector(
     ".theme2"
-  ).innerHTML = ` <a href="page2.html" class="darkBlue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
+  ).innerHTML = `<div class="wrapper"><a href="page2.html" class="darkBlue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
   <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
 </svg> <span>${localStorage.getItem("theme")}</span>
 </a>
 <a href="page3.html" class="blue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
   <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
 </svg> <span>${localStorage.getItem("thematique")}</span>
-</a>`;
+</a>
+</div>`;
 };
 
 /* Add event listener to exercice */

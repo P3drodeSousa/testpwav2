@@ -26,10 +26,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -519,6 +523,11 @@ button {
   top: 20px;
   z-index: 99;
   fill: #5485af;
+  transition: rotate 400ms ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 #download:hover {
@@ -594,7 +603,7 @@ button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 10px;
 }
 
 .router a:visited {
@@ -611,7 +620,6 @@ button {
 
 .router a:hover,
 a:hover svg {
-  background: var(--dark-blue-hover);
   fill: var(--golden);
 }
 
@@ -708,6 +716,10 @@ a:hover svg {
   padding-top: 40px;
 }
 
+.menu_Exercice #valid {
+  color: var(--golden);
+  margin-bottom: 20px;
+}
 .menu_Exercice #niveaux {
   display: flex;
   align-items: center;
@@ -748,8 +760,9 @@ a:hover svg {
 }
 
 .selected {
+  color: var(--golden);
   font-weight: 900;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .close {
@@ -788,14 +801,13 @@ a:hover svg {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 10px;
 }
 
 .questions > div {
   margin: 2px;
   flex: 1;
   min-width: 45px;
-  height: 30px;
+  height: 20px;
   background: var(--dark-blue);
   background: var(--light-blue);
   box-sizing: border-box;
@@ -859,6 +871,7 @@ a:hover svg {
 }
 
 #title {
+  margin-top: 15px;
   color: var(--dark-blue);
   font-weight: bold;
   font-size: 17px;
@@ -866,7 +879,8 @@ a:hover svg {
 }
 
 #timer {
-  margin: 15px auto;
+  margin: auto;
+  margin-top: 15px;
   color: var(--dark-blue);
   font-size: 25px;
   font-weight: bold;
@@ -879,11 +893,72 @@ a:hover svg {
   flex-direction: column;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.modal h2 {
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.modal .confirmer {
+  display: flex;
+  width: 90%;
+  max-width: 500px;
+  margin: 100px auto;
+  justify-content: space-between;
+}
+
+.modal .confirmer span {
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 50px;
+  border-radius: 2px;
+  background: var(--dark-blue);
+}
+.modal .confirmer .annuler {
+  background: var(--text);
+  color: var(--dark-blue);
+}
+.modal .confirmer span:hover {
+  font-weight: 700;
+  font-size: 19px;
+  background: var(--blade-golden);
+  color: var(--dark-blue);
+}
+
 .answers {
   margin-top: 30px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+}
+
+.section_Container {
+  width: 100%;
+  display: flex;
+}
+
+.containers {
+  background: red;
+  min-width: 100%;
+  height: 800px;
 }
 
 .dropabble {
@@ -954,6 +1029,12 @@ a:hover svg {
   align-items: center;
   color: var(--dark-blue);
   font-weight: 900;
+}
+
+.results_Content h2 {
+  color: var(--golden);
+  text-align: center;
+  margin-bottom: 45px;
 }
 
 .results_Content .total {
