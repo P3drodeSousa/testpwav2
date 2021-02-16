@@ -75,5 +75,24 @@ barba.init({
       },
       enter() {},
     },
+    {
+      name: "test2",
+      from: {
+        namespace: ["exercice_Menu"],
+      },
+      to: {
+        namespace: ["exercice"],
+      },
+      sync: true,
+      beforeLeave(data) {
+        localStorage.setItem("thematique", data.trigger.getAttribute("value"));
+      },
+      leave() {},
+      beforeEnter() {
+        exercice();
+        theme2();
+      },
+      enter() {},
+    },
   ],
 });

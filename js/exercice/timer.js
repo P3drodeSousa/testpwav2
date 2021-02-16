@@ -1,5 +1,5 @@
 // const TIME_LIMIT = document.querySelector("#timer").dataset.time;
-const TIME_LIMIT = localStorage.getItem("time");
+const TIME_LIMIT = localStorage.getItem("durée");
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;

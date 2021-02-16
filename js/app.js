@@ -15,12 +15,14 @@ export const scrollFunction = () => {
 
 /*Toggle support donwload*/
 export const support = () => {
-  document.querySelectorAll("#download").forEach((supp) => {
+  document.querySelectorAll("path").forEach((supp) => {
     supp.addEventListener("click", handleClick);
   });
 };
 
 function handleClick(e) {
+  // console.log();
+  e.srcElement.parentNode.classList.toggle("rotate");
   e.srcElement.parentNode.parentElement.lastElementChild.classList.toggle(
     "opened"
   );
@@ -67,7 +69,10 @@ export const showPropos = () => {
 };
 
 export const closePropos = () => {
-  document.querySelector("#close").addEventListener("click", toggleClass);
+  const close = document.querySelectorAll("#close");
+  close.forEach((el) => {
+    el.addEventListener("click", toggleClass);
+  });
 };
 
 export function toggleClass() {
@@ -101,4 +106,6 @@ export const closeImpressum = () => {
 window.onload = () => {
   showPropos();
   closePropos();
+  displayImpressum();
+  closeImpressum();
 };

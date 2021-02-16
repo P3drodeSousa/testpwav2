@@ -150,7 +150,7 @@ header span {
 
 .profil {
   position: fixed;
-  top: 60px;
+  min-height: 100vh;
   width: 100%;
   background: var(--blade-golden);
   color: var(--dark-blue);
@@ -160,7 +160,7 @@ header span {
 }
 
 .profil.visible {
-  transform: translateY(0%);
+  transform: translateY(60px);
 }
 
 main {
@@ -321,14 +321,15 @@ button {
 }
 
 #propos {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
-  background: var(--blue);
+  min-height: 100%;
+  background: var(--light-blue);
   color: var(--text);
-  transform: translateY(-100vh);
+  transform: translateY(-100%);
   overflow-y: scroll;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+  z-index: 77;
 }
 
 #propos::-webkit-scrollbar {
@@ -336,48 +337,65 @@ button {
 }
 
 #propos.visible {
-  top: 95px;
-  transform: translateY(0);
-}
-
-#propos h2 {
-  font-size: 30px;
-  margin-bottom: 30px;
+  transform: translateY(90px);
 }
 
 .impressum_container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: absolute;
+  right: 0;
+  top: 95px;
+  max-width: 570px;
   width: 100%;
-  background: var(--blue);
+  min-height: 90vh;
+  height: 100%;
+  background: var(--light-blue);
   color: var(--text);
-  transform: translateY(100%);
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 9999;
-  transition: transform 0.4s ease-in-out;
+  display: none;
+  padding: 40px;
 }
 
 .impressum_container.visible {
-  top: 95px;
-  transform: translateY(0);
+  display: block;
+  animation: wait 0.3s linear both;
 }
 
 .footerWrapper {
-  max-width: 1280px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
   padding: 40px;
   position: relative;
+  font-style: italic;
+}
+
+.footerWrapper h2 {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 25px auto;
+}
+
+.footerWrapper p {
+  font-size: 18px;
+  line-height: 22px;
 }
 
 #close {
-  font-weight: bold;
+  color: var(--dark-blue);
   cursor: pointer;
+  font-size: 20px;
+}
+
+#close:hover {
+  color: var(--text);
+}
+
+.footerWrapper .right {
   position: absolute;
   right: 20px;
-  font-size: 17px;
 }
+
 #footer .propos {
   background: var(--light-blue);
   padding: 5px 10px;
@@ -527,6 +545,7 @@ button {
 }
 
 .rotate {
+  fill: var(--golden);
   transform: rotate(90deg);
 }
 
@@ -1054,6 +1073,7 @@ a:hover svg {
   .category,
   .exercice {
     max-width: 100%;
+    min-height: 95px;
   }
 
   .theme2 a {

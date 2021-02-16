@@ -195,9 +195,9 @@ const timer = document.getElementById("timer");
 const next = document.querySelector("#next");
 const modal = document.querySelector(".modal");
 
-const total = localStorage.getItem("number");
+const total = localStorage.getItem("questions");
 const arrLvl = data
-  .filter((item) => item.lvl == localStorage.getItem("lvl"))
+  .filter((item) => item.lvl == localStorage.getItem("niveaux"))
   .slice(0, total);
 let active = 0;
 let trys = 0;
