@@ -133,8 +133,7 @@
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (email.value === "test@emploilausanne.ch")
-          window.location = "page2.html";
+        if (email.value) window.location = "page2.html";
       });
     </script>
     <script type="module" src="./js/app.js"></script>
