@@ -103,6 +103,12 @@ export const closeImpressum = () => {
   });
 };
 
+export const deconexion = () => {
+  document.querySelector("#deconexion").addEventListener("click", () => {
+    window.location = "index.html";
+  });
+};
+
 window.onload = () => {
   showPropos();
   closePropos();

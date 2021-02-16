@@ -140,6 +140,13 @@ header span {
   margin-right: 10px;
 }
 
+#deconexion {
+  cursor: pointer;
+}
+
+#deconexion:hover {
+  color: var(--golden);
+}
 #profil {
   fill: #af6a0b;
 }
@@ -222,6 +229,19 @@ h1 {
 }
 
 form input {
+  outline: none;
+  border: none;
+  height: 55px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  color: var(--text);
+  background: var(--blue-hover);
+  font-size: 22px;
+  padding: 10px;
+  font-weight: 900;
+}
+input::placeholder {
   outline: none;
   border: none;
   height: 55px;
@@ -360,6 +380,7 @@ button {
 
 .impressum_container.visible {
   display: block;
+  height: 100%;
   animation: wait 0.3s linear both;
 }
 
@@ -863,11 +884,9 @@ a:hover svg {
 
 @keyframes wait {
   from {
-    height: 0;
     opacity: 0;
   }
   to {
-    height: 100%;
     opacity: 1;
   }
 }

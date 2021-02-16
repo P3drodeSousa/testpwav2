@@ -1,4 +1,11 @@
-import { exercice, scrollFunction, theme2, theme, support } from "../app.js";
+import {
+  exercice,
+  scrollFunction,
+  theme2,
+  theme,
+  support,
+  deconexion,
+} from "../app.js";
 
 barba.use(barbaCss);
 
@@ -18,6 +25,7 @@ barba.init({
       sync: true,
       beforeEnter() {
         support();
+        deconexion();
       },
       leave() {},
       enter() {},
@@ -38,6 +46,7 @@ barba.init({
       leave() {},
       beforeEnter() {
         theme();
+        deconexion();
       },
       enter() {},
     },
@@ -57,6 +66,7 @@ barba.init({
       beforeEnter() {
         exercice();
         theme2();
+        deconexion();
       },
       enter() {},
     },
@@ -72,6 +82,7 @@ barba.init({
       leave() {},
       beforeEnter() {
         theme();
+        deconexion();
       },
       enter() {},
     },
@@ -91,6 +102,7 @@ barba.init({
       beforeEnter() {
         exercice();
         theme2();
+        deconexion();
       },
       enter() {},
     },

@@ -5,9 +5,11 @@ import {
   closeProfil,
   displayImpressum,
   closeImpressum,
+  deconexion,
 } from "../app.js";
 
 window.onload = () => {
+  deconexion();
   support();
   displayProfil();
   closeProfil();

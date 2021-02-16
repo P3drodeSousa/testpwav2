@@ -103,15 +103,15 @@
             professionnel.</span
           >
 
-          <form>
+          <form id="form">
             <input
               type="email"
               name="email"
               id="email"
-              value="Adresse e-mail"
+              placeholder="Adresse e-mail"
               required
             />
-            <button class="blade" onclick="goToPage2()">Connexion</button>
+            <button class="blade" type="submit">Connexion</button>
             <!-- <button class="blade" type="submit">Connexion</button> -->
           </form>
         </div>
@@ -128,9 +128,14 @@
       </div>
     </div>
     <script>
-      function goToPage2() {
-        window.location = "page2.html";
-      }
+      const form = document.querySelector("#form");
+      const email = document.getElementById("email");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (email.value === "test@emploilausanne.ch")
+          window.location = "page2.html";
+      });
     </script>
     <script type="module" src="./js/app.js"></script>
   </body>
