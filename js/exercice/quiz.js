@@ -299,7 +299,7 @@ function returnToExerciceMenu() {
     return displayModal();
   }
 
-  window.location = "/exercice.html";
+  window.location = "./exercice.html";
 }
 
 function verify() {

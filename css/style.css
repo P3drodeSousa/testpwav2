@@ -74,6 +74,7 @@ a {
   padding: 0 25px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header {
@@ -347,13 +348,14 @@ button {
   max-width: 570px;
   width: 100%;
   min-height: 90vh;
-  height: 100%;
+  height: 0;
   background: var(--light-blue);
   color: var(--text);
   overflow-y: auto;
   z-index: 9999;
   display: none;
   padding: 40px;
+  transition: height 600ms ease-in-out;
 }
 
 .impressum_container.visible {
@@ -739,18 +741,21 @@ a:hover svg {
   color: var(--golden);
   margin-bottom: 20px;
 }
-.menu_Exercice #niveaux {
+.menu_Exercice #lvl {
   display: flex;
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
 }
 
-.menu_Exercice #niveaux h3 {
+.menu_Exercice #lvl h3 {
   font-weight: 400;
   min-width: 85px;
 }
 
+#lvl .invisible {
+  visibility: hidden;
+}
 .choix {
   display: flex;
   align-items: center;
@@ -844,7 +849,7 @@ a:hover svg {
 }
 
 .questions .result {
-  height: 40px;
+  height: 30px;
   transition: background 600ms linear;
 }
 
@@ -858,9 +863,11 @@ a:hover svg {
 
 @keyframes wait {
   from {
+    height: 0;
     opacity: 0;
   }
   to {
+    height: 100%;
     opacity: 1;
   }
 }
