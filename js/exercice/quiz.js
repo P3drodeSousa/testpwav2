@@ -7,19 +7,19 @@ const data = [
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
+      "Ranger les cinq nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.04, 2.09, 2.6, 2.8, 2.89],
+    lvl: 1,
+  },
+  {
+    question:
+      "Ranger les cinq nombres suivants par ordre croissant (du plus petit au plus grand)",
     correct: [2.04, 2.09, 2.6, 2.8, 2.89],
     lvl: 1,
   },
   {
     question:
       "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.04, 2.09, 2.6, 2.8, 2.89],
-    lvl: 1,
-  },
-  {
-    question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
     correct: [0.04, 0.09, 0.1, 0.35, 0.6, 0.8, 0.89],
     lvl: 1,
   },
@@ -67,122 +67,122 @@ const data = [
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
     correct: [2.082, 2.422, 2.5, 2.56],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
     correct: [1.082, 1.422, 1.5, 1.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
     correct: [2.562, 2.82, 4.62, 3.9],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [4.082, 4.422, 4.5, 4.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [4.08, 4.42, 4.5, 4.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.082, 2.422, 2.5, 2.56],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.82, 2.42, 2.5, 2.56],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [1.082, 1.422, 1.5, 1.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [1.82, 1.42, 1.5, 1.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.562, 2.82, 4.62, 3.9],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.52, 2.82, 4.62, 3.9],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [4.082, 4.422, 4.5, 4.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [4.02, 4.42, 4.56, 4.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.082, 2.422, 2.5, 2.56],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.02, 2.42, 2.5, 2.56],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [1.082, 1.422, 1.5, 1.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [1.08, 1.42, 1.5, 1.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.562, 2.82, 4.62, 3.9],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.52, 2.82, 4.62, 3.9],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [4.082, 4.422, 4.5, 4.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [4.08, 4.42, 4.5, 4.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.082, 2.422, 2.5, 2.56],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.02, 2.42, 2.5, 2.56],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [1.082, 1.422, 1.5, 1.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [1.08, 1.42, 1.5, 1.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.562, 2.82, 4.62, 3.9],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.52, 2.82, 4.62, 3.9],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [4.082, 4.422, 4.5, 4.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [4.08, 4.42, 4.5, 4.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.082, 2.422, 2.5, 2.56],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.02, 2.42, 2.5, 2.56],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [1.082, 1.422, 1.5, 1.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [1.08, 1.42, 1.5, 1.59],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [2.562, 2.82, 4.62, 3.9],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [2.56, 2.82, 4.62, 3.9],
     lvl: 2,
   },
   {
     question:
-      "Ranger les sept nombres suivants par ordre croissant (du plus petit au plus grand)",
-    correct: [4.082, 4.422, 4.5, 4.59],
+      "Ranger les quatre nombres suivants par ordre croissant (du plus petit au plus grand)",
+    correct: [4.02, 4.42, 4.5, 4.59],
     lvl: 2,
   },
 ];
@@ -195,7 +195,7 @@ const timer = document.getElementById("timer");
 const next = document.querySelector("#next");
 const modal = document.querySelector(".modal");
 
-const total = localStorage.getItem("questions");
+const total = localStorage.getItem("number");
 const arrLvl = data
   .filter((item) => item.lvl == localStorage.getItem("niveaux"))
   .slice(0, total);
@@ -299,7 +299,7 @@ function returnToExerciceMenu() {
     return displayModal();
   }
 
-  window.location = "./exercice.html";
+  window.location = "exercice.html";
 }
 
 function verify() {

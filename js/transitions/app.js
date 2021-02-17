@@ -47,6 +47,7 @@ barba.init({
       beforeEnter() {
         theme();
         deconexion();
+        scrollFunction();
       },
       enter() {},
     },
@@ -67,6 +68,7 @@ barba.init({
         exercice();
         theme2();
         deconexion();
+        scrollFunction();
       },
       enter() {},
     },

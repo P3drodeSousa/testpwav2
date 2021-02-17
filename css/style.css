@@ -55,14 +55,6 @@ a {
   position: relative;
 }
 
-.darkBlue {
-  background: #184a73;
-}
-
-.blue {
-  background: var(--blue);
-}
-
 .Menu_bckC {
   background: var(--exercice-Menu);
 }
@@ -111,6 +103,7 @@ header {
 
 .exercice_Header .complement {
   font-size: 15px;
+  font-style: italic;
 }
 
 .exercice_Header .header_wrapper {
@@ -242,16 +235,9 @@ form input {
   font-weight: 900;
 }
 input::placeholder {
-  outline: none;
-  border: none;
-  height: 55px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
   color: var(--text);
-  background: var(--blue-hover);
+
   font-size: 22px;
-  padding: 10px;
   font-weight: 900;
 }
 
@@ -308,11 +294,9 @@ button {
 }
 
 .exerciceBtn {
-  font-size: 20px;
-  margin-top: 40px;
+  font-size: 18px;
   background: var(--button-Exercice);
   color: var(--text);
-  align-self: center;
 }
 
 .exerciceBtn:hover {
@@ -363,25 +347,24 @@ button {
 
 .impressum_container {
   position: absolute;
-  right: 0;
   top: 95px;
-  max-width: 570px;
+  right: 0;
+  max-width: 50%;
   width: 100%;
   min-height: 90vh;
-  height: 0;
+  height: 100%;
   background: var(--light-blue);
   color: var(--text);
   overflow-y: auto;
-  z-index: 9999;
-  display: none;
+  z-index: 9;
   padding: 40px;
-  transition: height 600ms ease-in-out;
+  transform: translateX(100vw);
+  transition: transform 600ms ease-in-out;
 }
 
 .impressum_container.visible {
-  display: block;
-  height: 100%;
-  animation: wait 0.3s linear both;
+  transform: translateX(0);
+  /* animation: wait 0.3s 0.6s linear both; */
 }
 
 .footerWrapper {
@@ -554,7 +537,7 @@ button {
   cursor: pointer;
   padding: 15px 25px;
   color: var(--white);
-  background: var(--dark-blue);
+  background: inherit;
   overflow: hidden;
 }
 
@@ -568,7 +551,6 @@ button {
 }
 
 .rotate {
-  fill: var(--golden);
   transform: rotate(90deg);
 }
 
@@ -624,9 +606,33 @@ button {
 
 .opened {
   left: 185px;
+  background: var(--dark-blue-hover);
 }
 
 /* Page 3 */
+.router {
+  position: sticky;
+  top: 95px;
+  color: var(--text);
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 999;
+}
+.theme2::after {
+  content: "";
+  background: var(--blue);
+
+  color: var(--text);
+  height: auto;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  z-index: 9;
+}
 .router {
   position: sticky;
   top: 95px;
@@ -646,6 +652,7 @@ button {
   align-items: center;
   cursor: pointer;
   padding: 10px;
+  z-index: 10;
 }
 
 .router a:visited {
@@ -752,42 +759,64 @@ a:hover svg {
 .menu_Exercice {
   margin-top: -95px;
   color: var(--text);
-  max-width: 320px;
+  max-width: 350px;
   width: 100%;
   padding: 20px 20px;
   padding-top: 40px;
 }
 
+.menu_Exercice h2 {
+  font-size: 22px;
+  font-weight: normal;
+}
+
 .menu_Exercice #valid {
   color: var(--golden);
   margin-bottom: 20px;
+  margin-top: 20px;
 }
+
 .menu_Exercice #lvl {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  height: 35px;
 }
 
 .menu_Exercice #lvl h3 {
   font-weight: 400;
-  min-width: 85px;
+  min-width: 90px;
+  font-size: 18px;
 }
 
 #lvl .invisible {
   visibility: hidden;
+  pointer-events: none;
 }
+
 .choix {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
+  gap: 2px 4px;
 }
 
 .choix > div {
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-basis: 100%;
   cursor: pointer;
+  height: 100%;
+  background: #5e8fb9;
+}
+
+.choix > div:hover {
+  font-weight: 900;
+  font-size: 19px;
 }
 
 .choix .done {
@@ -805,22 +834,25 @@ a:hover svg {
 }
 
 .selected {
-  color: var(--golden);
+  color: var(--white);
   font-weight: 900;
-  font-size: 18px;
+}
+
+.exercice_Menu_Nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .close {
-  color: var(--text);
-  width: 100%;
-  margin-top: 30px;
-  margin-left: auto;
-  text-align: right;
-  font-size: 18px;
+  color: var(--dark-blue);
+  min-width: 90px;
+  font-size: 20px;
 }
 
 .close a:visited {
-  color: var(--text);
+  color: var(--dark-blue);
 }
 
 .close a:hover {
@@ -841,17 +873,26 @@ a:hover svg {
   height: 40px;
   background: var(--dark-blue);
 } */
-.questions {
+
+.wrapper_exercice {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.questions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   width: 100%;
+  gap: 4px 3px;
 }
 
 .questions > div {
-  margin: 2px;
-  flex: 1;
-  min-width: 45px;
   height: 20px;
   background: var(--dark-blue);
   background: var(--light-blue);
@@ -859,6 +900,7 @@ a:hover svg {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   transition: height 500ms ease;
+  cursor: pointer;
 }
 
 .questions .completed {
@@ -933,7 +975,8 @@ a:hover svg {
 
 .question {
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
 }
@@ -991,7 +1034,7 @@ a:hover svg {
 .answers {
   margin-top: 30px;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 }
 
@@ -1010,7 +1053,7 @@ a:hover svg {
   display: flex;
   position: relative;
   background: var(--text);
-  width: 90px;
+  min-width: 90px;
   height: 80px;
   border-right: 5px solid var(--light-blue);
   border-top: 5px solid var(--light-blue);
@@ -1095,21 +1138,44 @@ a:hover svg {
 .disabled {
   pointer-events: none;
 }
+
+.darkBlue {
+  background: #184a73;
+}
+
+.darkBlueHover {
+  background: var(--dark-blue-hover);
+}
+
+.blue {
+  background: var(--blue);
+}
+
 @media screen and (max-width: 860px) {
   .category,
   .exercice {
     max-width: 100%;
     min-height: 95px;
   }
-
-  .theme2 a {
-    flex-basis: 100%;
-  }
   .wrapper {
     padding: 10px 20px;
   }
 
+  .theme2 .wrapper {
+    padding: 0px;
+  }
+
+  .theme2 a {
+    padding-left: 20px;
+    flex-basis: 100%;
+  }
+
   .complement {
     margin-left: 45px;
+  }
+
+  .questions {
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: row;
   }
 }

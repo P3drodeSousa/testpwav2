@@ -71,7 +71,6 @@
           <div class="complement">
             <span><b>Niveau I</b> 1 décimales</span>
             <span><b>Niveau II</b> 2 décimales</span>
-            <!-- <span><b>NIV.3</b> Complément (15, 25... 1000)</span> -->
           </div>
         </div>
       </header>
@@ -80,9 +79,10 @@
       <main>
         <div class="main_wrapper flex">
           <div class="menu_Exercice">
+            <h2>Veuillez sélectionner vos choix</h2>
             <h2 id="valid"></h2>
             <div id="lvl">
-              <h3>Niveaux</h3>
+              <h3 class="niveaux">Niveaux</h3>
               <div class="choix">
                 <div class="flex" id="niveaux" value="1">1</div>
                 <div class="flex" id="niveaux" value="2">2</div>
@@ -94,29 +94,29 @@
             </div>
 
             <div id="lvl">
-              <h3>Questions</h3>
+              <h3 class="number">Questions</h3>
               <div class="choix">
-                <div class="flex" id="questions" value="5">5</div>
-                <div class="flex" id="questions" value="10">10</div>
-                <div class="flex invisible" id="number" value="graduel">
-                  graduel
-                </div>
+                <div class="flex" id="number" value="10">10</div>
+                <div class="flex" id="number" value="20">20</div>
+                <div class="flex invisible" id="number">graduel</div>
               </div>
             </div>
 
             <div id="lvl">
-              <h3>Durée</h3>
+              <h3 class="durée">Durée</h3>
               <div class="choix">
                 <div class="flex" id="durée" value="120">2</div>
                 <div class="flex" id="durée" value="900">15</div>
-                <div class="flex invisible" id="time" value="">infini</div>
+                <div class="flex invisible" id="durée" value="">infini</div>
               </div>
             </div>
 
-            <button class="exerciceBtn" id="exercice">
-              Démarrer l'exercice
-            </button>
-            <div class="close"><a href="page2.html">Fermer</a></div>
+            <div class="exercice_Menu_Nav">
+              <div class="close"><a href="page4.html">Fermer</a></div>
+              <button class="exerciceBtn" id="exercice">
+                Démarrer l'exercice
+              </button>
+            </div>
           </div>
         </div>
       </main>

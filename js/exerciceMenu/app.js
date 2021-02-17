@@ -42,13 +42,13 @@
 // });
 
 const lvl = document.querySelectorAll("#niveaux");
-const number = document.querySelectorAll("#questions");
+const number = document.querySelectorAll("#number");
 const time = document.querySelectorAll("#durée");
 const title = document.querySelector("h2");
 const titleValid = document.querySelector("#valid");
 
 let valid = {
-  questions: false,
+  number: false,
   niveaux: false,
   durée: false,
 };
@@ -61,11 +61,13 @@ function handleClick(e) {
     [e.target.id]: true,
   };
 
+  console.log(e.target);
   // valid.e.target.id = true;
   document.querySelectorAll(`#${e.srcElement.id}`).forEach((child) => {
+    child.style.background = "#5e8fb9";
     child.classList.remove("selected");
   });
-  console.log(valid);
+  e.target.style.background = "#f5c800";
   e.target.classList.toggle("selected");
 }
 
@@ -82,15 +84,23 @@ time.forEach((el) => {
 });
 
 function validate() {
-  if (!valid.questions || !valid.durée || !valid.niveaux) {
-    let falseValues = [];
+  document.querySelectorAll(`h3`).forEach((el) => {
+    el.style.color = "var(--text)";
+  });
+  if (!valid.number || !valid.durée || !valid.niveaux) {
     Object.keys(valid).forEach((key) => {
-      if (!valid[key]) falseValues.push(key);
+      document.querySelectorAll(`#${key}`).forEach((el) => {
+        el.style.border = "none";
+      });
+      if (!valid[key]) {
+        document.querySelector(`h3.${key}`).style.color = "var(--golden)";
+        document.querySelectorAll(`#${key}`).forEach((el) => {
+          el.style.border = "2px solid var(--golden)";
+        });
+      }
     });
 
-    return (titleValid.innerText = `Veuillez sélectionner tous les infos (${falseValues.map(
-      (item) => item
-    )})`);
+    return (titleValid.innerText = `Veuillez préciser votre choix`);
   }
   window.location = "exercice1.html";
 }
@@ -98,7 +108,7 @@ function validate() {
 document.querySelector("#exercice").addEventListener("click", validate);
 
 const getTitle = () => {
-  localStorage.setItem("questions", "");
+  localStorage.setItem("number", "");
   localStorage.setItem("niveaux", "");
   localStorage.setItem("durée", "");
   title.innerText = localStorage.getItem("exercice");
