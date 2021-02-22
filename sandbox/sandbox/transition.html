@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+    <script type="module" src="test.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div data-index="0">1</div>
+        <div data-index="1">2</div>
+        <div data-index="2">3</div>
+        <div data-index="3">4</div>
+        <div data-index="4">5</div>
+        <div data-index="5">6</div>
+        <div data-index="6">7</div>
+        <div data-index="7">8</div>
+        <div data-index="8">9</div>
+        <div data-index="9">10</div>
+      </header>
+      <div class="wrapper">
+        <div class="test" data-index="0">1 <button id="next">next</button></div>
+        <div class="test display blue" data-index="1">
+          2 <button id="next">next</button>
+        </div>
+        <div class="test display" data-index="2">
+          3 <button id="next">next</button>
+        </div>
+        <div class="test display" data-index="3">
+          4 <button id="next">next</button>
+        </div>
+        <div class="test display" data-index="4">
+          5 <button id="next">next</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const next = document.querySelectorAll("#next");
+      const test = document.querySelectorAll(".test");
+      const wrapper = document.querySelector(".wrapper");
+      const exer = document.querySelectorAll("header div");
+      let curr = 0;
+
+      exer.forEach((ex) =>
+        ex.addEventListener("click", (e) => {
+          let dest = e.target.getAttribute("data-index");
+          console.log(e.target.getAttribute("data-index"));
+          console.log("curr", curr);
+          console.log(test[curr]);
+
+          if (dest > curr) {
+            console.log("bigger");
+          } else {
+            console.log("smaller");
+          }
+        })
+      );
+
+      next.forEach((el, i) => {
+        el.addEventListener("click", (e) => {
+          curr += 1;
+          e.target.parentNode.classList.add("hideRight");
+          e.target.parentNode.classList.add("display");
+
+          if (i === test.length - 1) {
+            return (wrapper.innerHTML = "<h2>Results</h2>");
+          }
+
+          e.target.parentNode.nextElementSibling.classList.toggle("display");
+        });
+      });
+    </script>
+  </body>
+</html>
