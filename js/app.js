@@ -22,12 +22,7 @@ export const support = () => {
 
 function handleClick(e) {
   e.srcElement.parentNode.classList.toggle("rotate");
-  console.log(
-    e.srcElement.parentNode.parentElement.children[1].classList.toggle("opened")
-  );
-  // e.srcElement.parentNode.parentElement.lastElementChild.classList.toggle(
-  //   "opened"
-  // );
+  e.srcElement.parentNode.parentElement.children[1].classList.toggle("opened");
   e.srcElement.parentNode.parentElement.classList.toggle("darkBlueHover");
 }
 
@@ -51,23 +46,14 @@ export const theme2 = () => {
 </a>
 <a href="page3.html" class="blue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
   <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
-</svg> <span>${localStorage.getItem("thematique")}</span>
+</svg> <span style="font-size: 15px">${localStorage.getItem(
+    "thematique"
+  )}</span>
 </a>
 </div> `;
 };
 
-/* <div class="wrapper"><a href="page2.html" class="darkBlue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
-  <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
-</svg> <span>${localStorage.getItem("theme")}</span>
-</a>
-<a href="page3.html" class="blue"><svg xmlns="http://www.w3.org/2000/svg" width="11.137" height="23.41" viewBox="0 0 11.137 23.41">
-  <path id="Union_179" data-name="Union 179" d="M324.761,406.947l-7.308,23.248-.051.162h3.763l7.322-23.247.052-.163Z" transform="translate(-317.402 -406.947)"/>
-</svg> <span>${localStorage.getItem("thematique")}</span>
-</a>
-</div> */
-
 /* Add event listener to exercice */
-
 export const exercice = () => {
   document.querySelectorAll(".exercice").forEach((ex) => {
     ex.addEventListener("click", (event) => {

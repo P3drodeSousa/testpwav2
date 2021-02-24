@@ -6,6 +6,7 @@ let timerInterval = null;
 
 function onTimesUp() {
   clearInterval(timerInterval);
+  /* DO SOMETHING .... */
 }
 
 function startTimer() {

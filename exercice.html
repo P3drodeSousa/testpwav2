@@ -5,41 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meca</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- <link rel="manifest" href="./manifest.json" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="PWAGram" />
-    <link
-      rel="apple-touch-icon"
-      href="./img/icons/logo/app-icon-192x192.png"
-      sizes="192x192"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="./img/icons/logo/app-icon-512x512.png"
-      sizes="512x512"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="/img/icons/app-icon-144x144.png"
-    />
-    <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="theme-color" content="#3f51b5" /> -->
   </head>
   <body data-barba="wrapper" class="Menu_bckC">
+    <div class="aide_Container">
+      <div class="aide">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="29"
+          height="21"
+          viewBox="0 0 29 21"
+        >
+          <path
+            id="Tracé_769"
+            data-name="Tracé 769"
+            d="M289,410.516v5.151l-5.975-2.913V429.2L289,426.5v5.016h23.025v-21Zm0,12.676-3,1.358v-6.994l3,1.463Zm20.048,5.3H291.977V413.536h17.072Z"
+            transform="translate(-283.025 -410.516)"
+            fill="#008400"
+          />
+        </svg>
+        <span>Tutoriel</span>
+      </div>
+      <div class="enonce">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="23"
+          viewBox="0 0 30 23"
+        >
+          <path
+            id="Tracé_770"
+            data-name="Tracé 770"
+            d="M285.751,420.853a9.59,9.59,0,0,1,7.731-9.337l-3.317-2.04a12.424,12.424,0,0,0,0,22.755l3.318-2.039A9.592,9.592,0,0,1,285.751,420.853Zm18.912-5.933-8.97-5.567v23l8.97-5.566h8.069V414.92Zm-1.944,9.558-4.006,2.485v-12.22l4.006,2.486Zm6.994-.667h-3.975V417.9h3.975Zm-21.454-2.958a7.674,7.674,0,0,0,5.612,7.345v-3.2a4.6,4.6,0,0,1,0-8.283v-3.2A7.672,7.672,0,0,0,288.259,420.853Z"
+            transform="translate(-282.732 -409.353)"
+            fill="#008400"
+          />
+        </svg>
+
+        <span>Énoncé</span>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" style="display: none">
+      <div class="modal_Container">
+        <a id="close" class="left">Fermer</a>
+        <div class="modal_ImgContainer">
+          <img src="./img/tuto/exercice.gif" alt="aide" srcset="" />
+        </div>
+        <a id="close" class="right">Fermer</a>
+      </div>
+    </div>
     <div data-barba="container">
       <header class="exercice_Header">
-        <!-- Modal -->
-        <div class="modal" style="display: none">
-          <div class="modal_Container">
-            <a id="close" class="left">Fermer</a>
-            <div class="modal_ImgContainer">
-              <img src="./img/tuto/exercice.gif" alt="aide" srcset="" />
-            </div>
-            <a id="close" class="right">Fermer</a>
-          </div>
-        </div>
-
         <div class="header_wrapper">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +93,7 @@
           </svg>
 
           <h2 class="exercice_title">
-            Appartement (peinture, plinthe, carrelage, moquette, frise...)
+            Calcul durée heure (heures décimales, heures sexagésimales)
           </h2>
         </div>
         <div class="header_wrapper">
@@ -88,15 +104,11 @@
           </div>
         </div>
       </header>
-      <!-- A propos -->
-
       <main>
-        <!-- Aide -->
-
         <div class="main_wrapper flex">
           <div class="menu_Exercice">
-            <h2>Veuillez sélectionner vos choix</h2>
-            <!-- <h2 id="valid"></h2> -->
+            <h2 id="listen">Veuillez sélectionner vos choix</h2>
+            <h2 id="valid"></h2>
 
             <div id="lvl">
               <h3 class="niveaux">Niveaux</h3>
@@ -104,7 +116,7 @@
                 <div class="flex" id="niveaux" value="1">1</div>
                 <div class="flex" id="niveaux" value="2">2</div>
                 <!-- Style when completed -->
-                <!-- <div class="flex done" id="lvl" value="1">1</div>
+                <!-- <div class="flex " id="lvl" value="1">1</div>
                 <div class="flex completed" id="lvl" value="2">2</div> -->
                 <div class="flex invisible" id="niveaux" value="3">3</div>
               </div>
@@ -115,7 +127,7 @@
               <div class="choix">
                 <div class="flex" id="number" value="10">10</div>
                 <div class="flex" id="number" value="20">20</div>
-                <div class="flex invisible" id="number">graduel</div>
+                <div class="flex" id="number">graduel</div>
               </div>
             </div>
 
@@ -124,20 +136,21 @@
               <div class="choix">
                 <div class="flex" id="durée" value="120">2</div>
                 <div class="flex" id="durée" value="900">15</div>
-                <div class="flex invisible" id="durée" value="">infini</div>
+                <div class="flex" id="durée" value="">infini</div>
               </div>
             </div>
 
-            <button class="exerciceBtn" id="exercice" type="button">
-              Démarrer
-            </button>
-
-            <div class="close"><a href="page4.html">Fermer</a></div>
+            <div class="exercice_Menu_Nav">
+              <div class="close"><a href="page4.html">Retour</a></div>
+              <button class="exerciceBtn" id="exercice" type="button">
+                Démarrer
+              </button>
+            </div>
           </div>
         </div>
       </main>
-      <div class="aide" style="display: none">Aide</div>
-      <script src="./js/exerciceMenu/app.js"></script>
+      <script type="module" src="./js/lib/speak/app.js"></script>
+      <script type="module" src="./js/exerciceMenu/app.js"></script>
     </div>
   </body>
 </html>

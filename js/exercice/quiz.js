@@ -189,11 +189,11 @@ const data = [
 
 const question = document.querySelector(".questions");
 const answers = document.querySelector(".answers");
-const oui = document.querySelector(".question");
 const title = document.querySelector("#title");
 const timer = document.getElementById("timer");
 const next = document.querySelector("#next");
 const modal = document.querySelector(".modal");
+const retourBtn = document.querySelector("#retour");
 
 const total = localStorage.getItem("number");
 const arrLvl = data
@@ -203,8 +203,7 @@ let active = 0;
 let trys = 0;
 let current = question.children;
 
-/*Read exercice */
-
+/* Lit exercice LORS QUE L'USER CLICK SUR LE TITRE ATM */
 title.addEventListener("click", speak);
 const utterance = new SpeechSynthesisUtterance();
 
@@ -228,78 +227,7 @@ function setText(text) {
   utterance.text = text;
 }
 
-/* Exercice  */
-const random = () => Math.floor(Math.random() * Math.floor(arrLvl.length));
-const essais = () => 3 - trys;
-
-next.addEventListener("click", verify);
-
-function tryNumber() {
-  if (trys === 3) {
-    removeClick();
-    displayResult();
-  }
-}
-
-function removeClick() {
-  document.querySelectorAll(".indicator").forEach((el, i) => {
-    el.style.pointerEvents = "none";
-  });
-}
-
-function displayResult() {
-  trys += 1;
-  tryNumber();
-
-  timer.style.display = "none";
-  title.innerText = "";
-
-  document.querySelectorAll(".indicator").forEach((el) => {
-    el.classList.add("result");
-  });
-
-  setTimeout(() => {
-    arrLvl.map((item, i) => {
-      !item.test
-        ? current[i].classList.add("striped")
-        : current[i].classList.contains("striped")
-        ? current[i].classList.add("completed2")
-        : current[i].classList.add("completed");
-    });
-  }, 1000);
-
-  return (answers.innerHTML = `
-       <div class="results_Content">
-       <h2>${
-         trys !== 4
-           ? `Essayez de nouveau.
-Vous avez encore ${essais()} ${essais() === 1 ? "essai" : "essais"}.`
-           : " Vous n'avez plus essai ;("
-       }</h2>
-        <span class="total">${random() * 10}%</span>
-        <span class="total_sur">${random()} sur ${arrLvl.length}</span>
-        <button class="blueBtn return" onclick="returnToExerciceMenu()" id="exercice">Retour</button>
-       
-      </div>   
-    `);
-
-  // No trys or 100% only
-  // ${trys === 4 || random() * 10 > 60 ? "" : ""}
-
-  /* true results*/
-  // <div class="results_Content">
-  //   <span class="total">
-  //     ${(arrLvl.filter((el) => el.test === true).length / arrLvl.length) * 100}%
-  //   </span>
-  //   <span class="total_sur">
-  //     ${arrLvl.filter((el) => el.test === true).length} sur ${arrLvl.length}
-  //   </span>
-  //   <button class="blueBtn return" id="exercice">
-  //     Retour
-  //   </button>
-  // </div>;
-}
-
+/* Modal */
 function displayModal() {
   modal.style.display = "block";
   modal.innerHTML = `<h2>Vous avez encore ${essais()} ${
@@ -320,6 +248,81 @@ function confirmer() {
   window.location = "exercice.html";
 }
 
+/* Exercice  */
+const random = () => Math.floor(Math.random() * Math.floor(arrLvl.length));
+const essais = () => 3 - trys;
+
+next.addEventListener("click", verify);
+
+/* Control nombre d'essais */
+function tryNumber() {
+  if (trys === 3) {
+    removeClick();
+    displayResult();
+  }
+}
+
+function removeClick() {
+  document.querySelectorAll(".indicator").forEach((el, i) => {
+    el.style.pointerEvents = "none";
+  });
+}
+
+/* Affiche le résult final */
+function displayResult() {
+  document.querySelectorAll(".indicator").forEach((el, i) => {
+    el.addEventListener("click", (e) => {
+      renderActive(i, e);
+    });
+  });
+
+  trys += 1;
+  tryNumber();
+
+  timer.style.display = "none";
+  title.innerText = "";
+
+  document.querySelectorAll(".indicator").forEach((el) => {
+    el.classList.add("result");
+  });
+
+  arrLvl.map((item, i) => {
+    !item.test
+      ? current[i].classList.add("striped")
+      : current[i].classList.contains("striped")
+      ? current[i].classList.add("completed2")
+      : current[i].classList.add("completed");
+  });
+
+  return (answers.innerHTML = `
+       <div class="results_Content">
+       <h2>${
+         trys !== 4
+           ? `Cliquez sur un des indicators pour essayez de nouveau.
+Vous avez encore ${essais()} ${essais() === 1 ? "essai" : "essais"}.`
+           : " Vous n'avez plus essai ;("
+       }</h2>
+        <span class="total">${random() * 10}%</span>
+        <span class="total_sur">${random()} sur ${arrLvl.length}</span>
+        <button class="blueBtn return" onclick="returnToExerciceMenu()" id="exercice">Retour</button>
+       
+      </div>   
+    `);
+
+  /* true results*/
+  // <div class="results_Content">
+  //   <span class="total">
+  //     ${(arrLvl.filter((el) => el.test === true).length / arrLvl.length) * 100}%
+  //   </span>
+  //   <span class="total_sur">
+  //     ${arrLvl.filter((el) => el.test === true).length} sur ${arrLvl.length}
+  //   </span>
+  //   <button class="blueBtn return" id="exercice">
+  //     Retour
+  //   </button>
+  // </div>;
+}
+
 function returnToExerciceMenu() {
   if (trys !== 4) {
     return displayModal();
@@ -328,6 +331,7 @@ function returnToExerciceMenu() {
   window.location = "exercice.html";
 }
 
+/* Correction d'un exercice*/
 function verify() {
   const result = document.querySelectorAll(".draggable");
   let test = [];
@@ -340,7 +344,9 @@ function verify() {
 
   arrLvl[active].test = correct;
 
-  completed();
+  if (trys !== 0 && !correct) return;
+
+  completed((arrLvl[active].test = correct));
 
   active += 1;
   answers.innerHTML = "";
@@ -356,15 +362,26 @@ function verify() {
   renderActive(active);
 }
 
-function completed() {
-  const test = current[active].classList.contains("striped")
-    ? (current[active].classList.add("completed2"),
-      current[active].classList.remove("striped"))
-    : current[active].classList.add("completed");
+/* Change le style des indicators des questions */
+function completed(test) {
+  current[active].classList.remove("striped");
+  let completed = trys === 0 ? "completed" : "completed2";
 
-  return test;
+  return test
+    ? current[active].classList.add(`${completed}`)
+    : current[active].classList.add("striped");
 }
 
+/* Afiche le menu aprés un essais */
+function renderBackBtn() {
+  retourBtn.style.display = "block";
+  retourBtn.addEventListener(
+    "click",
+    () => (window.location = "exercice.html")
+  );
+}
+
+/* change le style de l'indicator sur la question active */
 function renderActive(activ) {
   active = activ;
 
@@ -383,6 +400,7 @@ function renderActive(activ) {
   return test;
 }
 
+/* Affiche la question */
 function renderAnwers(active) {
   answers.innerHTML = "";
   next.style.opacity = "1";
@@ -398,16 +416,16 @@ function renderAnwers(active) {
         <div class="drag"><div class="draggable" value="${item}">${item}</div></div>`;
     answers.append(el);
   });
+
+  if (trys !== 0) renderBackBtn();
 }
 
+/* Genere les indicators des questions */
 function renderIndicators() {
   arrLvl.map((_, i) => {
     const el = document.createElement("div");
     el.className = "indicator";
     el.setAttribute("value", i);
-    el.addEventListener("click", (e) => {
-      renderActive(i, e);
-    });
     question.append(el);
   });
 }

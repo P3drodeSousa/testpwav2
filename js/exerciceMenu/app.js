@@ -1,45 +1,4 @@
-// const links = document.querySelectorAll(".exercice_Menu");
-
-// function selectedLink(e) {
-//   console.log("clicked");
-//   console.log(e.target);
-//   e.target.classList.toggle("selected");
-// }
-
-// links.forEach((link) => {
-//   link.addEventListener("click", selectedLink);
-// });
-
-//   slide.forEach(el => {
-//     el.classList.remove("selected");
-//   });
-
-//   e.target.classList.toggle("selected");
-// });
-// const header = sessionStorage.getItem("Exercice");
-
-// document.querySelector(".exerciceMenu_Header h2").innerText = header;
-
-// document
-//   .querySelector("#exercice")
-//   .addEventListener("click", () => (window.location = "exercice.html"));
-
-// const niveau = document.querySelectorAll("#niveau");
-// const question = document.querySelectorAll("#question");
-// const time = document.querySelectorAll("#time");
-
-// function toggleSelected() {
-//   const siblings = event.target.parentNode.child;
-//   console.log(siblings);
-//   // siblings.forEach((el) => {
-//   //   el.classList.remove("selected");
-//   // });
-//   event.target.classList.toggle("selected");
-// }
-
-// niveau.forEach((lvl) => {
-//   lvl.addEventListener("click", toggleSelected);
-// });
+import { setText, speak } from "../lib/speak/app.js";
 
 const lvl = document.querySelectorAll("#niveaux");
 const number = document.querySelectorAll("#number");
@@ -49,15 +8,15 @@ const titleValid = document.querySelector("#valid");
 const modal = document.querySelector(".modal");
 const aide = document.querySelector(".aide");
 const close = document.querySelectorAll("#close");
+
 aide.addEventListener("click", displayModal);
 
 /* Display modal */
-
 function displayModal() {
   modal.style.display = "block";
 }
 
-//Cloce Modal
+//Close Modal
 close.forEach((el) => {
   el.addEventListener("click", closeModal);
 });
@@ -86,7 +45,6 @@ function handleClick(e) {
   });
   e.target.style.background = "#f5c800";
   e.target.classList.toggle("selected");
-  validate();
 }
 
 lvl.forEach((level) => {
@@ -102,37 +60,35 @@ time.forEach((el) => {
 });
 
 function validate() {
-  // document.querySelectorAll(`h3`).forEach((el) => {
-  //   el.style.color = "var(--text)";
-  // });
+  document.querySelectorAll(`h3`).forEach((el) => {
+    el.style.color = "var(--text)";
+  });
 
-  // let erreur = 0;
+  let erreur = 0;
 
   if (!valid.number || !valid.durée || !valid.niveaux) {
-    // Object.keys(valid).forEach((key) => {
-    //   document.querySelectorAll(`#${key}`).forEach((el) => {
-    //     el.style.border = "none";
-    //   });
-    //   if (!valid[key]) {
-    //     erreur = ++erreur;
-    //     document.querySelector(`h3.${key}`).style.color = "#ce0000";
-    //     document.querySelectorAll(`#${key}`).forEach((el) => {
-    //       el.style.border = "2px solid #ce0000";
-    //     });
-    //   }
-    // });
-    return;
-    // const vos = erreur === 1 ? "votre" : "vos";
-    // return (titleValid.innerText = `Veuillez préciser ${vos} choix`);
+    Object.keys(valid).forEach((key) => {
+      document.querySelectorAll(`#${key}`).forEach((el) => {
+        el.style.border = "none";
+      });
+      if (!valid[key]) {
+        erreur = ++erreur;
+        document.querySelector(`h3.${key}`).style.color = "#ce0000";
+        document.querySelectorAll(`#${key}`).forEach((el) => {
+          el.style.border = "2px solid #ce0000";
+        });
+      }
+    });
+    const vos = erreur === 1 ? "votre" : "vos";
+
+    return (titleValid.innerText = `Veuillez préciser ${vos} choix`);
   }
-  document.querySelector("#exercice").disabled = false;
+  window.location = "exercice1.html";
 }
 
 // document.querySelector("#exercice").addEventListener("click", validate);
-document.querySelector("#exercice").disabled = true;
-document
-  .querySelector("#exercice")
-  .addEventListener("click", () => (window.location = "exercice1.html"));
+// document.querySelector("#exercice").disabled = true;
+document.querySelector("#exercice").addEventListener("click", validate);
 
 const getTitle = () => {
   localStorage.setItem("number", "");
@@ -142,32 +98,36 @@ const getTitle = () => {
 };
 
 /* Inactivity */
-function logout() {
-  // return (titleValid.innerText = `Avez vous besoin d'aide ?`);
-  aide.style.display = "flex";
-}
+// function logout() {
+//   aide.style.display = "flex";
+// }
 
-let timeup;
+// let timeup;
 
-function resetTimer() {
-  clearTimeout(timeup);
-  timeup = setTimeout(logout, 10000);
-  // 1000 milliseconds = 1 second
-}
+// function resetTimer() {
+//   clearTimeout(timeup);
+//   timeup = setTimeout(logout, 10000);
+//   // 1000 milliseconds = 1 second
+// }
 
-let events = [
-  "mousedown",
-  "mousemove",
-  "keypress",
-  "scroll",
-  "touchstart",
-  "click",
-];
-events.forEach(function (name) {
-  document.addEventListener(name, resetTimer);
-});
+// let events = [
+//   "mousedown",
+//   "mousemove",
+//   "keypress",
+//   "scroll",
+//   "touchstart",
+//   "click",
+// ];
+// events.forEach(function (name) {
+//   document.addEventListener(name, resetTimer);
+// });
+
+document.querySelector(".enonce").addEventListener("click", speak);
+
+const listen = document.querySelector("#listen");
 
 window.addEventListener("load", () => {
-  resetTimer();
+  // resetTimer();
   getTitle();
+  setText(listen.innerText);
 });
